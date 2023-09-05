@@ -1,0 +1,58 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    position:relative;
+    height:100vh;
+    width:100vw;
+}
+
+.content{
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:rgba(0, 0, 0, 0.434); 
+    height:100vh;
+    width:100%;
+    display:grid;
+    grid-template-rows:15ch 85vh ;
+}
+
+.backgroundImage{
+    height:100vh;
+    width: 100vw;
+}
+
+.body{
+    gap:1rem;
+}
+
+.text{
+    text-align:center;
+    gap:1rem;
+    font-size:2rem;
+}
+h1{
+    /* padding: 0 25rem; */
+    font-size:50px;
+}
+
+.form{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    width:60%;
+}
+input{
+    color:black;
+    border:none;
+    padding:0.8rem;
+    font-size: 1rem;
+    border:1px solid black;
+    outline: none;
+
+}
+

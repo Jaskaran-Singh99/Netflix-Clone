@@ -1,0 +1,21 @@
+.headerContainer{
+    padding:1rem
+}
+
+.logo{
+    align-items: center;
+    display: flex;
+}
+.logo img{
+    height: 5rem;
+}
+button{
+    padding:0.5rem 1rem;
+    background-color: #e50914;
+    border:none;
+    cursor:pointer;
+    color:white;
+    border-radius:0.2rem;
+    font-weight:100;
+    font-size:1rem;
+}
