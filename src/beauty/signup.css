@@ -55,4 +55,9 @@ input{
     outline: none;
 
 }
-
+.loginInput{
+    width:40%;
+}
+.loginBtn{
+    margin-top:10px;
+}
