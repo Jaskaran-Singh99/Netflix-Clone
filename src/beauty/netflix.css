@@ -1,0 +1,38 @@
+
+.backgroundImage{
+    filter:brightness(60%);
+    height:100vh;
+    width:100vw;
+}
+.container{
+    position: absolute;
+    bottom:15rem;
+}
+.movieLogo{
+    width:70%;
+    margin-left:5rem;  
+}
+.buttons{
+    margin:5rem;
+    gap:2rem;
+    position:absolute;
+
+}
+.buttons button{
+    font-size:1.3rem;
+    gap:1rem;
+    border-radius:0.2rem;
+    padding:0.3rem;
+    padding-left:2rem;
+    padding-right:2.4rem;
+    border:none;
+    cursor:pointer;
+    transition:0.5s ease-in-out;
+    background-color: white;
+    color:black;
+}
+.buttons button:hover{
+    opacity: 0.6;
+}
+
+
