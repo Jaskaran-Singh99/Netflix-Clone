@@ -1,32 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import backgroundImage from '../assets/home.jpg'
 import movieLogo from '../assets/homeTitle.webp'
 import {FaPlay} from 'react-icons/fa'
 import {AiOutlineInfoCircle} from 'react-icons/ai'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { getGenres } from '../store'
 import '../beauty/netflix.css'
+import { useDispatch } from 'react-redux'
 
 
 
 function Netflix(){
-  const [isScrolled, setIsScrolled] = useState(false)
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(getGenres())
+  },[])
 
-  window.onscroll = ()=>{
-    setIsScrolled(window.pageYOffset === 0 ? false : true)
-    return ()=>(window.onscroll === null) 
-  }
-
+  const navigate = useNavigate()
   return (
     <>
-    <Navbar isScrolled={isScrolled}></Navbar>
+    <Navbar ></Navbar>
     <div className='hero'>
         <img src={backgroundImage} className='backgroundImage'></img>
-          <div className='container'>
+          <div className='netflixContainer'>
             <img src={movieLogo} className='movieLogo'></img>
           
           <div className='buttons flex'>
-            <button className='flex j-center a-center'> <FaPlay></FaPlay>Play</button>
+            <button className='flex j-center a-center'> <FaPlay onClick={()=>navigate('/player')}></FaPlay>Play</button>
             <button className='flex j-center a-center'><AiOutlineInfoCircle></AiOutlineInfoCircle>More Info</button>
           </div> 
           </div>
