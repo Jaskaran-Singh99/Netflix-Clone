@@ -4,21 +4,29 @@ import backgroundImage from '../assets/home.jpg'
 import movieLogo from '../assets/homeTitle.webp'
 import {FaPlay} from 'react-icons/fa'
 import {AiOutlineInfoCircle} from 'react-icons/ai'
-import { useState } from 'react'
+
 import { useNavigate } from 'react-router-dom'
-import { getGenres } from '../store'
+import { fetchMovies, getGenres } from '../store'
 import '../beauty/netflix.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 
 function Netflix(){
+
+  const navigate = useNavigate()
+  const genresLoaded = useSelector((state)=>state.netflix.genresLoaded)
+  const movies = useSelector((state)=>state.netflix.movies)
   const dispatch = useDispatch()
+
   useEffect(()=>{
     dispatch(getGenres())
   },[])
 
-  const navigate = useNavigate()
+  useEffect(()=>{
+    if(genresLoaded) dispatch(fetchMovies({type:'all'}))
+  })
+console.log(movies)
   return (
     <>
     <Navbar ></Navbar>
@@ -26,7 +34,6 @@ function Netflix(){
         <img src={backgroundImage} className='backgroundImage'></img>
           <div className='netflixContainer'>
             <img src={movieLogo} className='movieLogo'></img>
-          
           <div className='buttons flex'>
             <button className='flex j-center a-center'> <FaPlay onClick={()=>navigate('/player')}></FaPlay>Play</button>
             <button className='flex j-center a-center'><AiOutlineInfoCircle></AiOutlineInfoCircle>More Info</button>
