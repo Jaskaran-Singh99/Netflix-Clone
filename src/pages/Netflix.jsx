@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar'
+import Slider from '../components/Slider'
 import backgroundImage from '../assets/home.jpg'
 import movieLogo from '../assets/homeTitle.webp'
 import {FaPlay} from 'react-icons/fa'
@@ -25,8 +26,8 @@ function Netflix(){
 
   useEffect(()=>{
     if(genresLoaded) dispatch(fetchMovies({type:'all'}))
-  })
-console.log(movies)
+  }, [genresLoaded])
+
   return (
     <>
     <Navbar ></Navbar>
@@ -42,6 +43,8 @@ console.log(movies)
 
           
     </div>
+    <Slider movies={movies}></Slider>
+    
     </>
   )
 }

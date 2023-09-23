@@ -130,7 +130,7 @@ import {
     });
   };
   
-  const getRawData = async (api, genres, paging = false) => {
+  const getRawData = async (api, genres, paging = true) => {
     const moviesArray = [];
     for (let i = 1; moviesArray.length < 60 && i < 10; i++) {
       const {
