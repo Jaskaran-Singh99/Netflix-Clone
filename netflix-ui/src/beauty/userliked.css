@@ -1,0 +1,17 @@
+.userContent{
+    margin:2.3rem;   
+    gap:3rem;
+}
+h1{
+    text-align:center;
+}
+
+.userGrid{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.userContainer{
+    height: 100vh;
+    width: 100%;
+}

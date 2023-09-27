@@ -1,0 +1,86 @@
+
+.nav{
+    position:left;
+    top:0;
+    height:6rem;
+    justify-content: space-between;
+    width:100%;
+    padding:0 4rem;
+    background-color:transparent;
+    z-index:2;
+    align-items:center;
+ 
+
+}
+.left{
+    gap:2rem;
+}
+
+.logoImg{
+    height:4rem;
+}
+
+.links{
+    list-style:none;
+    gap:2rem; 
+}
+.links li a{
+    color:white;
+    text-decoration:none
+}
+
+.right{
+    gap:1rem;
+    justify-content: end;
+}
+
+.right button{
+    background-color: transparent;
+    border:none;
+    cursor:pointer;
+}
+
+.right button &:focus{
+    outline: none;
+}
+
+.right button svg{
+    color:#f34242;
+    font-size:1.2rem;
+}
+
+.search{
+    display: flex;
+    gap:0.5rem;
+    align-items:center;
+    justify-content: end;
+    padding: 0.2rem;
+    padding-left: 0.5rem;
+    border:none;
+    transition: all 0.5 ease-out;
+
+}
+.search button{
+    background-color: transparent;
+
+}
+.search button svg{
+    color:white;
+}
+
+.search input{
+    width:0;
+    opacity:0;
+    visibility: hidden;
+    transition: 1.4s ease;
+    background-color: transparent;
+    border:none;
+    color:white;
+    outline:none;
+}
+
+.showSearch input {
+    width: 100%;
+    opacity:1;
+    visibility: visible;
+}
